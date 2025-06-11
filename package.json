@@ -1,0 +1,18 @@
+{
+  "name": "contactsgroupe-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.glaider.fr:contactsgroupe/contactsgroupe-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
