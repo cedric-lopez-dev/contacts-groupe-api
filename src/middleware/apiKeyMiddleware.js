@@ -3,7 +3,7 @@ dotenv.config();
 
 export const verifyApiKey = (req, res, next) => {
     const apiKeyFromHeader = req.headers['x-api-key'];
-    const apiKeyFromQuery = req.query.apiKey;
+    const apiKeyFromQuery = req.query.apiKey ? decodeURIComponent(req.query.apiKey) : null;
 
     const apiKey = apiKeyFromHeader || apiKeyFromQuery;
 
