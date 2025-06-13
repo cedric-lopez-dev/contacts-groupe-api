@@ -1,0 +1,306 @@
+openapi: 3.0.0
+info:
+  title: ContactsGroupe API
+  description: |
+    API pour la gestion des contacts via l'API Dolibarr.
+    
+    ### Authentification
+    1. Utilisez l'API Key dans le header pour les routes admin
+    2. Cliquez sur le bouton "Authorize" en haut de la page
+    3. Collez votre API Key dans le champ approprié
+  version: 1.0.0
+
+servers:
+  - url: /api
+    description: Serveur de l'API
+
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+      description: Clé API pour l'accès administrateur
+  
+  schemas:
+    ContacteurRequest:
+      type: object
+      required:
+        - firstname
+        - lastname
+        - email
+        - phone
+      properties:
+        firstname:
+          type: string
+          minLength: 1
+          maxLength: 100
+          example: "PIERRE"
+          description: Prénom du contacteur (sera converti en majuscules)
+        lastname:
+          type: string
+          minLength: 1
+          maxLength: 100
+          example: "DUPONT"
+          description: Nom du contacteur (sera converti en majuscules)
+        email:
+          type: string
+          format: email
+          example: "pierre.dupont@example.com"
+          description: Adresse email du contacteur
+        phone:
+          type: string
+          pattern: "^(\\+\\d{1,4}|0)[1-9](\\s?\\d{2}){4}$|^(\\+\\d{1,4}|0)[1-9]\\d{8}$"
+          example: "+33612345678"
+          description: Numéro de téléphone (format français ou international)
+        civility:
+          type: string
+          enum: ["MR", "MME", "MLLE"]
+          default: "MR"
+          example: "MR"
+          description: Civilité du contacteur
+        societe:
+          type: string
+          maxLength: 200
+          example: "DUPONT CONSULTING"
+          description: Nom de la société (optionnel)
+        type:
+          type: string
+          enum: ["PREMIUM", "VISITEUR", "PARTENAIRE"]
+          default: "PREMIUM"
+          example: "PREMIUM"
+          description: Type d'adhérent
+        note_private:
+          type: string
+          maxLength: 2000
+          example: "Client VIP - Parrainage Gold"
+          description: Note privée (optionnel)
+        address:
+          type: string
+          maxLength: 255
+          example: "15 Rue des Lilas"
+          description: Adresse postale (optionnel)
+        zip:
+          type: string
+          maxLength: 10
+          example: "75001"
+          description: Code postal (optionnel)
+        town:
+          type: string
+          maxLength: 100
+          example: "PARIS"
+          description: Ville (optionnel)
+
+    ContacteurResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: "success"
+          description: Statut de la réponse
+        message:
+          type: string
+          example: "Contacteur créé avec succès"
+          description: Message de confirmation
+        data:
+          type: object
+          properties:
+            id:
+              type: string
+              example: "123"
+              description: ID unique du contacteur
+            ref:
+              type: string
+              example: "1"
+            entity:
+              type: string
+              example: "1"
+            lastname:
+              type: string
+              example: "DUPONT"
+            firstname:
+              type: string
+              example: "PIERRE"
+            civility_id:
+              type: string
+              example: "MR"
+            civility:
+              type: string
+              example: "Monsieur"
+            email:
+              type: string
+              format: email
+              example: "pierre.dupont@example.com"
+            login:
+              type: string
+              example: "pierredupont"
+            phone:
+              type: string
+              example: "+33612345678"
+            societe:
+              type: string
+              example: "DUPONT CONSULTING"
+            company:
+              type: string
+              example: "DUPONT CONSULTING"
+            address:
+              type: string
+              example: "15 Rue des Lilas"
+            zip:
+              type: string
+              example: "75001"
+            town:
+              type: string
+              example: "PARIS"
+            country_id:
+              type: string
+              example: "1"
+            country_code:
+              type: string
+              example: "FR"
+            gender:
+              type: string
+              example: "man"
+            type:
+              type: string
+              example: "PREMIUM"
+            typeid:
+              type: string
+              example: "1"
+            note_private:
+              type: string
+              example: "Client VIP - Parrainage Gold"
+            morphy:
+              type: string
+              example: "phy"
+            public:
+              type: string
+              example: "0"
+            statut:
+              type: string
+              example: "1"
+            status:
+              type: string
+              example: "1"
+            array_options:
+              type: object
+              example: {}
+    
+    Error:
+      type: object
+      properties:
+        status:
+          type: string
+          example: "error"
+        message:
+          type: string
+          example: "Description de l'erreur"
+        errors:
+          type: object
+          example: {
+            "firstname": "Le prénom est requis",
+            "email": "L'adresse email est invalide"
+          }
+          description: Détails des erreurs de validation
+
+tags:
+  - name: Admin
+    description: Endpoints nécessitant une clé API (administrateur)
+
+paths:
+  /admin/contacteurFromDocuware:
+    post:
+      tags:
+        - Admin
+      security:
+        - ApiKeyAuth: []
+      summary: Création d'un contacteur
+      description: Crée un nouveau contacteur avec les données fournies
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ContacteurRequest'
+      responses:
+        '201':
+          description: Contacteur créé avec succès
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContacteurResponse'
+        '400':
+          description: Données invalides
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: Non autorisé
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Erreur serveur
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /admin:
+    get:
+      tags:
+        - Admin
+      security:
+        - ApiKeyAuth: []
+      summary: Liste des contacteurs
+      description: Récupère la liste des contacteurs avec possibilité de filtrage
+      parameters:
+        - in: query
+          name: query
+          schema:
+            type: string
+          description: Recherche par nom ou prénom
+        - in: query
+          name: type
+          schema:
+            type: string
+            enum: ["PREMIUM", "VISITEUR", "PARTENAIRE"]
+          description: Filtrer par type d'adhérent
+        - in: query
+          name: limit
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 20
+          description: Nombre de résultats par page
+        - in: query
+          name: page
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+          description: Numéro de la page
+      responses:
+        '200':
+          description: Liste des contacteurs récupérée avec succès
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ContacteurResponse'
+        '401':
+          description: Non autorisé
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Erreur serveur
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'

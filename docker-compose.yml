@@ -1,0 +1,43 @@
+networks:
+  traefik:
+    external: true
+services:
+  api-nossl:
+    profiles: [ "nossl" ]
+    image: node:alpine
+    container_name: "api-${WEBSITE_NAME}"
+    restart: unless-stopped
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: /bin/sh -c "npm install && npm run dev"
+    networks:
+      - traefik
+    environment:
+      DOMAIN_WEBSITE: "${DOMAIN_WEBSITE}"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.api-${WEBSITE_NAME}.rule=Host(`api-${DOMAIN_WEBSITE}`)"
+      - "traefik.http.routers.api-${WEBSITE_NAME}.entrypoints=${ENTRYPOINT}"
+      - "traefik.http.services.api-${WEBSITE_NAME}.loadbalancer.server.port=3000"
+
+  api:
+    profiles: [ "ssl" ]
+    image: node:alpine
+    container_name: "api-${WEBSITE_NAME}"
+    restart: unless-stopped
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: /bin/sh -c "npm install && npm run start"
+    networks:
+      - traefik
+    environment:
+      DOMAIN_WEBSITE: "${DOMAIN_WEBSITE}"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.api-${WEBSITE_NAME}.rule=Host(`api-${DOMAIN_WEBSITE}`)"
+      - "traefik.http.routers.api-${WEBSITE_NAME}.entrypoints=${ENTRYPOINT}"
+      - "traefik.http.services.api-${WEBSITE_NAME}.loadbalancer.server.port=3000"
+      - "traefik.http.routers.api-${WEBSITE_NAME}.tls.certresolver=myhttpchallenge"
+
