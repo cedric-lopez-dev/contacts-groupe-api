@@ -1,0 +1,1518 @@
+[{
+    "Fields": [
+        {
+            "SystemField": true,
+            "FieldName": "DWDOCID",
+            "FieldLabel": "Document ID",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": 448,
+            "ItemElementName": "Int"
+        },
+        {
+            "SystemField": true,
+            "FieldName": "DWSECTIONCOUNT",
+            "FieldLabel": "Section count",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": 3,
+            "ItemElementName": "Int"
+        },
+        {
+            "SystemField": true,
+            "FieldName": "DWSTOREDATETIME",
+            "FieldLabel": "Stored on",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "/Date(1748942988000)/",
+            "ItemElementName": "DateTime"
+        },
+        {
+            "SystemField": true,
+            "FieldName": "DWMODDATETIME",
+            "FieldLabel": "Modified on",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "/Date(1748943106000)/",
+            "ItemElementName": "DateTime"
+        },
+        {
+            "SystemField": true,
+            "FieldName": "DWEXTENSION",
+            "FieldLabel": "File type",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": ".pdf",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": true,
+            "FieldName": "DWMODUSER",
+            "FieldLabel": "Modified by",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "ADMIN",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": true,
+            "FieldName": "DWSTOREUSER",
+            "FieldLabel": "Stored by",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "JEREMY",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": true,
+            "FieldName": "DWDOCSIZE",
+            "FieldLabel": "Document size",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": 15864240,
+            "ItemElementName": "Int"
+        },
+        {
+            "SystemField": true,
+            "FieldName": "DWPAGECOUNT",
+            "FieldLabel": "Section count",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": 3,
+            "ItemElementName": "Int"
+        },
+        {
+            "SystemField": true,
+            "FieldName": "DWDISK",
+            "FieldLabel": "Disk number",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": 1,
+            "ItemElementName": "Int"
+        },
+        {
+            "SystemField": true,
+            "FieldName": "DWLASTACCESSUSER",
+            "FieldLabel": "Last accessed by",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "LA",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": true,
+            "FieldName": "DWLASTACCESSDATETIME",
+            "FieldLabel": "Last accessed on",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "/Date(1748959397000)/",
+            "ItemElementName": "DateTime"
+        },
+        {
+            "SystemField": true,
+            "FieldName": "DWCONTENTMODUSER",
+            "FieldLabel": "Content modified by",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "ADMIN",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": true,
+            "FieldName": "DWCONTENTMODDATETIME",
+            "FieldLabel": "Content modified on",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "/Date(1748943105000)/",
+            "ItemElementName": "DateTime"
+        },
+        {
+            "SystemField": true,
+            "FieldName": "DWDISKNO",
+            "FieldLabel": "Disk number",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": 1,
+            "ItemElementName": "Int"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "SIRET",
+            "FieldLabel": "SIRET",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "Int"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "NUMERO_D_ADHESION",
+            "FieldLabel": "Numero d'Adhesion",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "Int"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "ID_FICHE",
+            "FieldLabel": "ID_Fiche",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "Int"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "HT",
+            "FieldLabel": "HT",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "Decimal"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "TVA",
+            "FieldLabel": "TVA",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "Decimal"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "TTC",
+            "FieldLabel": "TTC",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "Decimal"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "DOCUMENT_TYPE",
+            "FieldLabel": "Type de document",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "Contrat Premium",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "SECTEUR_GEOGRAPHIQUE",
+            "FieldLabel": "Secteur géographique",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "Perpignan",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "NOM_DE_L_ENTREPRISE",
+            "FieldLabel": "Nom de l'entreprise",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "LRA Auto",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "DENOMINATION_COMMERCIALE",
+            "FieldLabel": "Dénomination commerciale",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "LRA Auto",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "NOM_CARTE_DE_MEMBRE_1",
+            "FieldLabel": "Nom carte de membre 1",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "Gaglione",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "PRENOM_CARTE_DE_MEMBRE_1",
+            "FieldLabel": "Prénom carte de membre 1",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "Vincent",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "POSTE_OCCUPE_CARTE_DE_MEMBRE_",
+            "FieldLabel": "Poste occupé carte de membre 1",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "EMAIL_CARTE_DE_MEMBRE_1",
+            "FieldLabel": "Email carte de membre 1",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "lra.auto9@gmail.com",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "NOM_CARTE_DE_MEMBRE_2",
+            "FieldLabel": "Nom carte de membre 2",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "PRENOM_CARTE_DE_MEMBRE_2",
+            "FieldLabel": "Prénom carte de membre 2",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "POSTE_OCCUPE_CARTE_DE_MEMBRE1",
+            "FieldLabel": "Poste occupé carte de membre 2",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "EMAIL_CARTE_DE_MEMBRE_2",
+            "FieldLabel": "Email carte de membre 2",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "AVANTAGES_MIS_EN_PLACE_POUR_L",
+            "FieldLabel": "Avantages mis en place pour les membres",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "AVANTAGES_MIS_EN_PLACE_POUR_1",
+            "FieldLabel": "Avantages mis en place pour le grand public",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "PAIEMENT___VIREMENT_EN_1_FOIS",
+            "FieldLabel": "Paiement - virement en 1 fois",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "PAIEMENT___DATE_DE_PRELEVEMEN",
+            "FieldLabel": "Paiement - Date de prélèvement",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "ACTIVITE_REPRESENTEE",
+            "FieldLabel": "Activité représentée",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "NOM_CARTE_DE_MEMBRE_3",
+            "FieldLabel": "Nom carte de membre 3",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "PRENOM_CARTE_DE_MEMBRE_3",
+            "FieldLabel": "Prénom carte de membre 3",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "POSTE_OCCUPE_CARTE_DE_MEMBRE2",
+            "FieldLabel": "Poste occupé carte de membre 3",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "EMAIL_CARTE_DE_MEMBRE_3",
+            "FieldLabel": "Email carte de membre 3",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "ADRESSE_DE_L_ENTREPRISE",
+            "FieldLabel": "Adresse de l'entreprise",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "9 impasse de l'industrie 66180 Villeneuve de la raho",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "RCS_DE_L_ENTREPRISE",
+            "FieldLabel": "RCS de l'entreprise",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "928812452 00011",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "NOMBRE_DE_CARTES_MEMBRE__",
+            "FieldLabel": "Nombre de cartes membre  ",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "PAIEMENT___PRELEVEMENTS_EN_X1",
+            "FieldLabel": "Paiement - prélèvements en X échéances ",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "STATUT",
+            "FieldLabel": "Statut",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "Contrat signé",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "URL_DOCUMENT",
+            "FieldLabel": "URL Document",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "PAYS",
+            "FieldLabel": "Pays",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "FRANCE",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "IBAN",
+            "FieldLabel": "IBAN",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "FR76 1695 8000 0130 6142 6643 104",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "COMMENTAIRE",
+            "FieldLabel": "Commentaire",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "BIC",
+            "FieldLabel": "BIC",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "QNTOFRP1 XXX",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "PORTABLE_CARTE_DE_MEMBRE_1",
+            "FieldLabel": "Portable carte de membre 1",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "+33624735225",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "PORTABLE_CARTE_DE_MEMBRE_2",
+            "FieldLabel": "Portable carte de membre 2",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "PORTABLE_CARTE_DE_MEMBRE_3",
+            "FieldLabel": "Portable carte de membre 3",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "AVANTAGES_MIS_EN_PLACE__MEMBR",
+            "FieldLabel": "Avantages mis en place (membres ou grand public)",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "DATE_DE_DEBUT_DE_CONTRAT_TXT",
+            "FieldLabel": "Date de début de contrat txt",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "01/07/2025",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "DATE_DE_FIN_DE_CONTRAT_TXT",
+            "FieldLabel": "Date de fin de contrat txt",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "30/06/2026",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "CLASSEMENT_1",
+            "FieldLabel": "Classement 1",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "CLASSEMENT_2",
+            "FieldLabel": "Classement 2",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "CLASSEMENT_3",
+            "FieldLabel": "Classement 3",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "NUMERO_DE_FACTURE",
+            "FieldLabel": "Numéro de facture",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "DATE_DE_NAISSANCE_CARTE_DE_M3",
+            "FieldLabel": "Date de naissance carte de membre 1 txt",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "INTERVIEW",
+            "FieldLabel": "Interview",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "ROLL_UP_",
+            "FieldLabel": "Roll-Up ",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "PACK_DEMARRAGE_RS__RESEAUX_SO",
+            "FieldLabel": "Pack Démarrage RS (Réseaux Sociaux) ",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "AVANTAGES_MIS_EN_PLACE__GRAND",
+            "FieldLabel": "Avantages mis en place (grand public)",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "AVANTAGES_MIS_EN_PLACE__RESER",
+            "FieldLabel": "Avantages mis en place (Réservés aux membres Cont)",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "THEMATIQUES",
+            "FieldLabel": "Thématiques",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "CARTE_AVANTAGE_HEBERGEUR_QRCO",
+            "FieldLabel": "Carte Avantage hébergeur QRCode",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "LE_MONTANT_DE_L_ADHESION_ANNU",
+            "FieldLabel": "Le montant de l’adhésion annuelle se fera",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "par prélèvements mensuels de 135 euros",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "PAIEMENT_PAR_CHEQUE",
+            "FieldLabel": "Paiement par chèque",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "DATE",
+            "FieldLabel": "Date",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "/Date(1748908800000)/",
+            "ItemElementName": "Date"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "DATE_DE_DEBUT_DE_CONTRAT",
+            "FieldLabel": "Date de début de contrat",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "Date"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "DATE_DE_FIN_DE_CONTRAT",
+            "FieldLabel": "Date de fin de contrat",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "Date"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "DATE_DE_NAISSANCE_CARTE_DE_ME",
+            "FieldLabel": "Date de naissance carte de membre 1",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "Date"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "DATE_DE_NAISSANCE_CARTE_DE_M1",
+            "FieldLabel": "Date de naissance carte de membre 2",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "Date"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "DATE_DE_NAISSANCE_CARTE_DE_M2",
+            "FieldLabel": "Date de naissance carte de membre 3",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "Date"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "ECHEANCE",
+            "FieldLabel": "Echéance",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "Date"
+        },
+        {
+            "SystemField": true,
+            "FieldName": "@CABINETNAME",
+            "FieldLabel": "@CABINETNAME",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "Adherents",
+            "ItemElementName": "String"
+        }
+    ],
+    "Flags": {
+        "IsCold": false,
+        "IsDBRecord": false,
+        "IsCheckedOut": false,
+        "IsCopyRightProtected": false,
+        "IsVoiceAvailable": false,
+        "HasAppendedDocuments": true,
+        "IsProtected": false,
+        "IsDeleted": false,
+        "IsEmail": false
+    },
+    "Links": [
+        {
+            "rel": "self",
+            "href": "/DocuWare/Platform/FileCabinets/a128f889-f8f0-415b-88b2-05f6ddee6866/Documents/448"
+        },
+        {
+            "rel": "fields",
+            "href": "/DocuWare/Platform/FileCabinets/a128f889-f8f0-415b-88b2-05f6ddee6866/Documents/448/Fields"
+        },
+        {
+            "rel": "clippedDocuments",
+            "href": "/DocuWare/Platform/FileCabinets/a128f889-f8f0-415b-88b2-05f6ddee6866/Operations/ClippedDocuments?docId=448"
+        },
+        {
+            "rel": "sections",
+            "href": "/DocuWare/Platform/FileCabinets/a128f889-f8f0-415b-88b2-05f6ddee6866/Sections?docid=448"
+        },
+        {
+            "rel": "thumbnail",
+            "href": "/DocuWare/Platform/FileCabinets/a128f889-f8f0-415b-88b2-05f6ddee6866/Documents/448/Thumbnail?annotations=True&v=809016828"
+        },
+        {
+            "rel": "thumbnailWithoutAnnotation",
+            "href": "/DocuWare/Platform/FileCabinets/a128f889-f8f0-415b-88b2-05f6ddee6866/Documents/448/Thumbnail?annotations=False&v=809016828"
+        },
+        {
+            "rel": "lowQualityImage",
+            "href": "/DocuWare/Platform/FileCabinets/a128f889-f8f0-415b-88b2-05f6ddee6866/Documents/448/Image?v=809016828"
+        },
+        {
+            "rel": "annotationAsSvg",
+            "href": "/DocuWare/Platform/FileCabinets/a128f889-f8f0-415b-88b2-05f6ddee6866/Documents/448/AnnotationAsImage?format=Svg&v=809016828"
+        },
+        {
+            "rel": "lock",
+            "href": "/DocuWare/Platform/FileCabinets/a128f889-f8f0-415b-88b2-05f6ddee6866/Documents/448/Lock"
+        },
+        {
+            "rel": "rights",
+            "href": "/DocuWare/Platform/FileCabinets/a128f889-f8f0-415b-88b2-05f6ddee6866/Documents/448/Rights"
+        }
+    ],
+    "Sections": [],
+    "ContentType": "application/zip",
+    "FileCabinetId": "a128f889-f8f0-415b-88b2-05f6ddee6866",
+    "HaveMoreTotalPages": false,
+    "HasTextAnnotation": false,
+    "HasXmlDigitalSignatures": false,
+    "AnnotationsPreview": false,
+    "TotalPages": 17,
+    "Id": 448,
+    "Title": "contrat-premium",
+    "LastModified": "/Date(1748943106000)/",
+    "LastModifiedSpecified": true,
+    "CreatedAt": "/Date(1748942988000)/",
+    "CreatedAtSpecified": true,
+    "FileSize": 15864240,
+    "SectionCount": 3,
+    "IntellixTrust": "None",
+    "VersionStatus": "Initial"
+},
+{
+    "Fields": [
+        {
+            "SystemField": true,
+            "FieldName": "DWDOCID",
+            "FieldLabel": "Document ID",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": 447,
+            "ItemElementName": "Int"
+        },
+        {
+            "SystemField": true,
+            "FieldName": "DWSECTIONCOUNT",
+            "FieldLabel": "Section count",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": 3,
+            "ItemElementName": "Int"
+        },
+        {
+            "SystemField": true,
+            "FieldName": "DWSTOREDATETIME",
+            "FieldLabel": "Stored on",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "/Date(1748942884000)/",
+            "ItemElementName": "DateTime"
+        },
+        {
+            "SystemField": true,
+            "FieldName": "DWMODDATETIME",
+            "FieldLabel": "Modified on",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "/Date(1748942937000)/",
+            "ItemElementName": "DateTime"
+        },
+        {
+            "SystemField": true,
+            "FieldName": "DWEXTENSION",
+            "FieldLabel": "File type",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": ".",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": true,
+            "FieldName": "DWMODUSER",
+            "FieldLabel": "Modified by",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "JEREMY",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": true,
+            "FieldName": "DWSTOREUSER",
+            "FieldLabel": "Stored by",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "INVIT",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": true,
+            "FieldName": "DWDOCSIZE",
+            "FieldLabel": "Document size",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": 2754624,
+            "ItemElementName": "Int"
+        },
+        {
+            "SystemField": true,
+            "FieldName": "DWPAGECOUNT",
+            "FieldLabel": "Section count",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": 3,
+            "ItemElementName": "Int"
+        },
+        {
+            "SystemField": true,
+            "FieldName": "DWDISK",
+            "FieldLabel": "Disk number",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": 1,
+            "ItemElementName": "Int"
+        },
+        {
+            "SystemField": true,
+            "FieldName": "DWLASTACCESSUSER",
+            "FieldLabel": "Last accessed by",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "LA",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": true,
+            "FieldName": "DWLASTACCESSDATETIME",
+            "FieldLabel": "Last accessed on",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "/Date(1748956170000)/",
+            "ItemElementName": "DateTime"
+        },
+        {
+            "SystemField": true,
+            "FieldName": "DWCONTENTMODUSER",
+            "FieldLabel": "Content modified by",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "INVIT",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": true,
+            "FieldName": "DWCONTENTMODDATETIME",
+            "FieldLabel": "Content modified on",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "/Date(1748942884000)/",
+            "ItemElementName": "DateTime"
+        },
+        {
+            "SystemField": true,
+            "FieldName": "DWDISKNO",
+            "FieldLabel": "Disk number",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": 1,
+            "ItemElementName": "Int"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "SIRET",
+            "FieldLabel": "SIRET",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "Int"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "NUMERO_D_ADHESION",
+            "FieldLabel": "Numero d'Adhesion",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": 192,
+            "ItemElementName": "Int"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "ID_FICHE",
+            "FieldLabel": "ID_Fiche",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": 447,
+            "ItemElementName": "Int"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "HT",
+            "FieldLabel": "HT",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "Decimal"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "TVA",
+            "FieldLabel": "TVA",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "Decimal"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "TTC",
+            "FieldLabel": "TTC",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "Decimal"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "DOCUMENT_TYPE",
+            "FieldLabel": "Type de document",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "Fiche de renseignements",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "SECTEUR_GEOGRAPHIQUE",
+            "FieldLabel": "Secteur géographique",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "Perpignan",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "NOM_DE_L_ENTREPRISE",
+            "FieldLabel": "Nom de l'entreprise",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "LRA Auto",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "DENOMINATION_COMMERCIALE",
+            "FieldLabel": "Dénomination commerciale",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "LRA Auto",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "NOM_CARTE_DE_MEMBRE_1",
+            "FieldLabel": "Nom carte de membre 1",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "Gaglione",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "PRENOM_CARTE_DE_MEMBRE_1",
+            "FieldLabel": "Prénom carte de membre 1",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "Vincent",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "POSTE_OCCUPE_CARTE_DE_MEMBRE_",
+            "FieldLabel": "Poste occupé carte de membre 1",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "dirigeant",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "EMAIL_CARTE_DE_MEMBRE_1",
+            "FieldLabel": "Email carte de membre 1",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "lra.auto9@gmail.com",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "NOM_CARTE_DE_MEMBRE_2",
+            "FieldLabel": "Nom carte de membre 2",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "PRENOM_CARTE_DE_MEMBRE_2",
+            "FieldLabel": "Prénom carte de membre 2",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "POSTE_OCCUPE_CARTE_DE_MEMBRE1",
+            "FieldLabel": "Poste occupé carte de membre 2",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "EMAIL_CARTE_DE_MEMBRE_2",
+            "FieldLabel": "Email carte de membre 2",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "AVANTAGES_MIS_EN_PLACE_POUR_L",
+            "FieldLabel": "Avantages mis en place pour les membres",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "AVANTAGES_MIS_EN_PLACE_POUR_1",
+            "FieldLabel": "Avantages mis en place pour le grand public",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "PAIEMENT___VIREMENT_EN_1_FOIS",
+            "FieldLabel": "Paiement - virement en 1 fois",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "Non",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "PAIEMENT___DATE_DE_PRELEVEMEN",
+            "FieldLabel": "Paiement - Date de prélèvement",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "le 01 du mois",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "ACTIVITE_REPRESENTEE",
+            "FieldLabel": "Activité représentée",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "negociateur automobiles et utilitaires",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "NOM_CARTE_DE_MEMBRE_3",
+            "FieldLabel": "Nom carte de membre 3",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "PRENOM_CARTE_DE_MEMBRE_3",
+            "FieldLabel": "Prénom carte de membre 3",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "POSTE_OCCUPE_CARTE_DE_MEMBRE2",
+            "FieldLabel": "Poste occupé carte de membre 3",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "EMAIL_CARTE_DE_MEMBRE_3",
+            "FieldLabel": "Email carte de membre 3",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "ADRESSE_DE_L_ENTREPRISE",
+            "FieldLabel": "Adresse de l'entreprise",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "9 impasse de l'industrie 66180 Villeneuve de la raho",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "RCS_DE_L_ENTREPRISE",
+            "FieldLabel": "RCS de l'entreprise",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "928812452 00011",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "NOMBRE_DE_CARTES_MEMBRE__",
+            "FieldLabel": "Nombre de cartes membre  ",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "1",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "PAIEMENT___PRELEVEMENTS_EN_X1",
+            "FieldLabel": "Paiement - prélèvements en X échéances ",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "12",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "STATUT",
+            "FieldLabel": "Statut",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "Fiche Validée",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "URL_DOCUMENT",
+            "FieldLabel": "URL Document",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "https://contacts66.docuware.cloud:443/docuware/Platform/WebClient/7eee9134-94d4-442d-b4be-8bed8384872f/Integration?p=V&fc=a128f889-f8f0-415b-88b2-05f6ddee6866&did=447",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "PAYS",
+            "FieldLabel": "Pays",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "France",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "IBAN",
+            "FieldLabel": "IBAN",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "FR76 1695 8000 0130 6142 6643 104",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "COMMENTAIRE",
+            "FieldLabel": "Commentaire",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "BIC",
+            "FieldLabel": "BIC",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "QNTOFRP1 XXX",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "PORTABLE_CARTE_DE_MEMBRE_1",
+            "FieldLabel": "Portable carte de membre 1",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "+33624735225",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "PORTABLE_CARTE_DE_MEMBRE_2",
+            "FieldLabel": "Portable carte de membre 2",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "PORTABLE_CARTE_DE_MEMBRE_3",
+            "FieldLabel": "Portable carte de membre 3",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "AVANTAGES_MIS_EN_PLACE__MEMBR",
+            "FieldLabel": "Avantages mis en place (membres ou grand public)",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "DATE_DE_DEBUT_DE_CONTRAT_TXT",
+            "FieldLabel": "Date de début de contrat txt",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "01/07/2025",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "DATE_DE_FIN_DE_CONTRAT_TXT",
+            "FieldLabel": "Date de fin de contrat txt",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "30/06/2025",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "CLASSEMENT_1",
+            "FieldLabel": "Classement 1",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "CLASSEMENT_2",
+            "FieldLabel": "Classement 2",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "CLASSEMENT_3",
+            "FieldLabel": "Classement 3",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "NUMERO_DE_FACTURE",
+            "FieldLabel": "Numéro de facture",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "DATE_DE_NAISSANCE_CARTE_DE_M3",
+            "FieldLabel": "Date de naissance carte de membre 1 txt",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "26/08/1992",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "INTERVIEW",
+            "FieldLabel": "Interview",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "Non",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "ROLL_UP_",
+            "FieldLabel": "Roll-Up ",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "Non",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "PACK_DEMARRAGE_RS__RESEAUX_SO",
+            "FieldLabel": "Pack Démarrage RS (Réseaux Sociaux) ",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "Non",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "AVANTAGES_MIS_EN_PLACE__GRAND",
+            "FieldLabel": "Avantages mis en place (grand public)",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "1 mois de garantie supplémentaire pièce et main d'œuvre offert",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "AVANTAGES_MIS_EN_PLACE__RESER",
+            "FieldLabel": "Avantages mis en place (Réservés aux membres Cont)",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "carte grise offerte (voir conditions en magasin)",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "THEMATIQUES",
+            "FieldLabel": "Thématiques",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "Véhicules et transports",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "CARTE_AVANTAGE_HEBERGEUR_QRCO",
+            "FieldLabel": "Carte Avantage hébergeur QRCode",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "Oui",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "LE_MONTANT_DE_L_ADHESION_ANNU",
+            "FieldLabel": "Le montant de l’adhésion annuelle se fera",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "PAIEMENT_PAR_CHEQUE",
+            "FieldLabel": "Paiement par chèque",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "Non",
+            "ItemElementName": "String"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "DATE",
+            "FieldLabel": "Date",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "/Date(1748908800000)/",
+            "ItemElementName": "Date"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "DATE_DE_DEBUT_DE_CONTRAT",
+            "FieldLabel": "Date de début de contrat",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "/Date(1751328000000)/",
+            "ItemElementName": "Date"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "DATE_DE_FIN_DE_CONTRAT",
+            "FieldLabel": "Date de fin de contrat",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "/Date(1751241600000)/",
+            "ItemElementName": "Date"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "DATE_DE_NAISSANCE_CARTE_DE_ME",
+            "FieldLabel": "Date de naissance carte de membre 1",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "/Date(714787200000)/",
+            "ItemElementName": "Date"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "DATE_DE_NAISSANCE_CARTE_DE_M1",
+            "FieldLabel": "Date de naissance carte de membre 2",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "Date"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "DATE_DE_NAISSANCE_CARTE_DE_M2",
+            "FieldLabel": "Date de naissance carte de membre 3",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "Date"
+        },
+        {
+            "SystemField": false,
+            "FieldName": "ECHEANCE",
+            "FieldLabel": "Echéance",
+            "IsNull": true,
+            "ReadOnly": false,
+            "ItemElementName": "Date"
+        },
+        {
+            "SystemField": true,
+            "FieldName": "@CABINETNAME",
+            "FieldLabel": "@CABINETNAME",
+            "IsNull": false,
+            "ReadOnly": false,
+            "Item": "Adherents",
+            "ItemElementName": "String"
+        }
+    ],
+    "Flags": {
+        "IsCold": false,
+        "IsDBRecord": false,
+        "IsCheckedOut": false,
+        "IsCopyRightProtected": false,
+        "IsVoiceAvailable": false,
+        "HasAppendedDocuments": true,
+        "IsProtected": false,
+        "IsDeleted": false,
+        "IsEmail": false
+    },
+    "Links": [
+        {
+            "rel": "self",
+            "href": "/DocuWare/Platform/FileCabinets/a128f889-f8f0-415b-88b2-05f6ddee6866/Documents/447"
+        },
+        {
+            "rel": "fields",
+            "href": "/DocuWare/Platform/FileCabinets/a128f889-f8f0-415b-88b2-05f6ddee6866/Documents/447/Fields"
+        },
+        {
+            "rel": "clippedDocuments",
+            "href": "/DocuWare/Platform/FileCabinets/a128f889-f8f0-415b-88b2-05f6ddee6866/Operations/ClippedDocuments?docId=447"
+        },
+        {
+            "rel": "sections",
+            "href": "/DocuWare/Platform/FileCabinets/a128f889-f8f0-415b-88b2-05f6ddee6866/Sections?docid=447"
+        },
+        {
+            "rel": "thumbnail",
+            "href": "/DocuWare/Platform/FileCabinets/a128f889-f8f0-415b-88b2-05f6ddee6866/Documents/447/Thumbnail?annotations=True&v=142929436"
+        },
+        {
+            "rel": "thumbnailWithoutAnnotation",
+            "href": "/DocuWare/Platform/FileCabinets/a128f889-f8f0-415b-88b2-05f6ddee6866/Documents/447/Thumbnail?annotations=False&v=142929436"
+        },
+        {
+            "rel": "lowQualityImage",
+            "href": "/DocuWare/Platform/FileCabinets/a128f889-f8f0-415b-88b2-05f6ddee6866/Documents/447/Image?v=142929436"
+        },
+        {
+            "rel": "annotationAsSvg",
+            "href": "/DocuWare/Platform/FileCabinets/a128f889-f8f0-415b-88b2-05f6ddee6866/Documents/447/AnnotationAsImage?format=Svg&v=142929436"
+        },
+        {
+            "rel": "lock",
+            "href": "/DocuWare/Platform/FileCabinets/a128f889-f8f0-415b-88b2-05f6ddee6866/Documents/447/Lock"
+        },
+        {
+            "rel": "rights",
+            "href": "/DocuWare/Platform/FileCabinets/a128f889-f8f0-415b-88b2-05f6ddee6866/Documents/447/Rights"
+        }
+    ],
+    "Sections": [],
+    "ContentType": "application/zip",
+    "FileCabinetId": "a128f889-f8f0-415b-88b2-05f6ddee6866",
+    "HaveMoreTotalPages": false,
+    "HasTextAnnotation": false,
+    "HasXmlDigitalSignatures": false,
+    "AnnotationsPreview": false,
+    "TotalPages": 3,
+    "Id": 447,
+    "Title": "fiche-de-renseignements",
+    "LastModified": "/Date(1748942937000)/",
+    "LastModifiedSpecified": true,
+    "CreatedAt": "/Date(1748942884000)/",
+    "CreatedAtSpecified": true,
+    "FileSize": 2754624,
+    "SectionCount": 3,
+    "IntellixTrust": "None",
+    "VersionStatus": "Initial"
+}]

@@ -1,6 +1,33 @@
 import contacteurModel from '../models/contacteur.model.js';
+import { createContactFromDocuware, updateContact } from './contact.services.js';
 
-const create = async (data) => {
+import { createThirdpartyFromDocuware } from './thirdparties.service.js';
+
+export const createFromDocuware = async (data) => {
+
+    const docuwareData = contacteurModel.transformFromDocuware(data);
+    const newContacteur = await createContacteur(docuwareData);
+    const memberID = newContacteur;
+    const newThirdparty = await createThirdpartyFromDocuware(data);
+    const thirdpartyID = newThirdparty;
+    const updatedContacteur = await updateContacteur(
+        memberID,
+        { socid: thirdpartyID }
+    );
+    const newContacts = await createContactFromDocuware(data);
+
+    const updatedContact = await Promise.all(newContacts.map(async contact => {
+        return await updateContact(
+            contact,
+            { socid: thirdpartyID }
+        );
+    }));
+
+    return { updatedContacteur, updatedContact };
+};
+
+
+export const createContacteur = async (data) => {
     const validatedData = await contacteurModel.validate(data);
     const dolibarrData = contacteurModel.toDolibarrFormat(validatedData);
     try {
@@ -19,114 +46,25 @@ const create = async (data) => {
 
             throw new Error(errors, 'Erreur lors de la création du contacteur');
         }
-
         return await response.json();
     } catch (error) {
         throw new Error(`Erreur lors de la sauvegarde : ${error.message}`);
     }
-};
-
-const find = async (filters = {}) => {
-    try {
-        const url = new URL(`${process.env.DOLIBARR_URL}members`);
-
-        if (filters.query) {
-            url.searchParams.append('sqlfilters',
-                `(t.lastname LIKE '%${filters.query}%' OR t.firstname LIKE '%${filters.query}%')`
-            );
-        }
-        if (filters.type) url.searchParams.append('type', filters.type);
-        if (filters.limit) url.searchParams.append('limit', filters.limit);
-        if (filters.page) {
-            const offset = (filters.page - 1) * (filters.limit || 20);
-            url.searchParams.append('offset', offset);
-        }
-
-        const response = await fetch(url, {
-            headers: {
-                'DOLAPIKEY': process.env.DOLIBARR_API_KEY
-            }
-        });
-
-        if (!response.ok) {
-            throw new Error('Erreur lors de la recherche des contacteurs');
-        }
-
-        return await response.json();
-    } catch (error) {
-        throw new Error(`Erreur lors de la recherche : ${error.message}`);
+}
+export const updateContacteur = async (memberID, data) => {
+    const response = await fetch(`${process.env.DOLIBARR_URL}members/${memberID}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            'DOLAPIKEY': process.env.DOLIBARR_API_KEY
+        },
+        body: JSON.stringify(data)
+    });
+    if (!response.ok) {
+        const error = await response.json();
+        const errors = Object.entries(error.error)
+            .map(([key, value]) => [key, value]);
+        throw new Error(errors, 'Erreur lors de la mise à jour du contacteur');
     }
-};
-
-const findById = async (id) => {
-    try {
-        const response = await fetch(`${process.env.DOLIBARR_URL}members/${id}`, {
-            headers: {
-                'DOLAPIKEY': process.env.DOLIBARR_API_KEY
-            }
-        });
-
-        if (!response.ok) {
-            if (response.status === 404) return null;
-            throw new Error('Contacteur non trouvé');
-        }
-
-        return await response.json();
-    } catch (error) {
-        throw new Error(`Erreur lors de la récupération : ${error.message}`);
-    }
-};
-
-const update = async (id, updateData) => {
-    try {
-        const current = await findById(id);
-        if (!current) throw new Error('Contacteur non trouvé');
-
-        const validatedData = await contacteurModel.validate({ ...current, ...updateData });
-        const dolibarrData = contacteurModel.toDolibarrFormat(validatedData);
-
-        const response = await fetch(`${process.env.DOLIBARR_URL}members/${id}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-                'DOLAPIKEY': process.env.DOLIBARR_API_KEY
-            },
-            body: JSON.stringify(dolibarrData)
-        });
-
-        if (!response.ok) {
-            throw new Error('Erreur lors de la mise à jour du contacteur');
-        }
-
-        return await response.json();
-    } catch (error) {
-        throw new Error(`Erreur lors de la mise à jour : ${error.message}`);
-    }
-};
-
-const remove = async (id) => {
-    try {
-        const response = await fetch(`${process.env.DOLIBARR_URL}members/${id}`, {
-            method: 'DELETE',
-            headers: {
-                'DOLAPIKEY': process.env.DOLIBARR_API_KEY
-            }
-        });
-
-        if (!response.ok) {
-            throw new Error('Erreur lors de la suppression du contacteur');
-        }
-
-        return true;
-    } catch (error) {
-        throw new Error(`Erreur lors de la suppression : ${error.message}`);
-    }
-};
-
-export default {
-    create,
-    find,
-    findById,
-    update,
-    remove
-};
+    return await response.json();
+}

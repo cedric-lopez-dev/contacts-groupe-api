@@ -4,6 +4,7 @@ import Joi from 'joi';
 const PHONE_REGEX = /^(\+\d{1,4}|0)[1-9](\s?\d{2}){4}$|^(\+\d{1,4}|0)[1-9]\d{8}$/;
 const TYPES_ADHERENT = ["PREMIUM", "VISITEUR", "PARTENAIRE"];
 const CIVILITES = ["MR", "MME", "MLLE"];
+const baseMessages = 'contacteur';
 
 // Validation schema
 const contacteurSchema = Joi.object({
@@ -12,58 +13,58 @@ const contacteurSchema = Joi.object({
         .max(100)
         .required()
         .messages({
-            'string.empty': 'Le prénom est requis',
-            'string.min': 'Le prénom doit contenir au moins {#limit} caractère',
-            'string.max': 'Le prénom ne peut pas dépasser {#limit} caractères'
+            'string.empty': `${baseMessages} prénom est requis`,
+            'string.min': `${baseMessages} prénom doit contenir au moins {#limit} caractère`,
+            'string.max': `${baseMessages} prénom ne peut pas dépasser {#limit} caractères`
         }),
     lastname: Joi.string()
         .min(1)
         .max(100)
         .required()
         .messages({
-            'string.empty': 'Le nom est requis',
-            'string.min': 'Le nom doit contenir au moins {#limit} caractère',
-            'string.max': 'Le nom ne peut pas dépasser {#limit} caractères'
+            'string.empty': `${baseMessages} nom est requis`,
+            'string.min': `${baseMessages} nom doit contenir au moins {#limit} caractère`,
+            'string.max': `${baseMessages} nom ne peut pas dépasser {#limit} caractères`
         }),
     civility: Joi.string()
         .valid(...CIVILITES)
         .default('MR')
         .messages({
-            'any.only': 'La civilité doit être MR, MME ou MLLE'
+            'any.only': `${baseMessages} civilité doit être MR, MME ou MLLE`
         }),
     email: Joi.string()
         .email()
         .required()
         .messages({
-            'string.email': 'L\'adresse email est invalide',
-            'string.empty': 'L\'email est requis'
+            'string.email': `${baseMessages} adresse email est invalide`,
+            'string.empty': `${baseMessages} email est requis`
         }),
     phone: Joi.string()
         .pattern(PHONE_REGEX)
         .required()
         .messages({
-            'string.pattern.base': 'Format invalide. Utilisez un format français (06XXXXXXXX) ou international (+33XXXXXXXX)',
-            'string.empty': 'Le téléphone est requis'
+            'string.pattern.base': `${baseMessages} format invalide. Utilisez un format français (06XXXXXXXX) ou international (+33XXXXXXXX)`,
+            'string.empty': `${baseMessages} téléphone est requis`
         }),
     societe: Joi.string()
         .max(200)
         .allow('')
         .allow(null)
         .messages({
-            'string.max': 'Le nom de la société ne peut pas dépasser {#limit} caractères'
+            'string.max': `${baseMessages} nom de la société ne peut pas dépasser {#limit} caractères`
         }),
     type: Joi.string()
         .valid(...TYPES_ADHERENT)
         .default('PREMIUM')
         .messages({
-            'any.only': `Le type doit être ${TYPES_ADHERENT.join(', ')}`
+            'any.only': `${baseMessages} type doit être ${TYPES_ADHERENT.join(', ')}`
         }),
     note_private: Joi.string()
         .max(2000)
         .allow('')
         .allow(null)
         .messages({
-            'string.max': 'La note ne peut pas dépasser {#limit} caractères'
+            'string.max': `${baseMessages} note ne peut pas dépasser {#limit} caractères`
         }),
     address: Joi.string()
         .max(255)
@@ -76,7 +77,31 @@ const contacteurSchema = Joi.object({
     town: Joi.string()
         .max(100)
         .allow('')
+        .allow(null),
+    iddocuware: Joi.string()
+        .allow('')
         .allow(null)
+        .messages({
+            'string.base': `${baseMessages} ID Docuware doit être une chaîne de caractères`
+        }),
+    avantages_membres: Joi.string()
+        .allow('')
+        .allow(null)
+        .messages({
+            'string.base': `${baseMessages} Avantages membres doit être une chaîne de caractères`
+        }),
+    avantages_public: Joi.string()
+        .allow('')
+        .allow(null)
+        .messages({
+            'string.base': `${baseMessages} Avantages grand doit être une chaîne de caractères`
+        }),
+    activite_representee: Joi.string()
+        .allow('')
+        .allow(null)
+        .messages({
+            'string.base': `${baseMessages} Activité représentée doit être une chaîne de caractères`
+        })
 });
 
 // Validation function
@@ -122,6 +147,17 @@ const getGenderFromCivility = (civility) => {
     return civility === "MR" ? "man" : "woman";
 };
 
+// Fonction pour normaliser les noms (enlever accents et mettre en minuscules)
+const normalizeName = (name) => {
+    if (!name) return '';
+    return name
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '') // Supprime les accents
+        .replace(/[^a-z0-9\s]/g, '') // Garde seulement lettres, chiffres et espaces
+        .trim();
+};
+
 const toDolibarrFormat = (data) => {
     return {
         // Valeurs par défaut requises
@@ -135,7 +171,7 @@ const toDolibarrFormat = (data) => {
         lastname: data.lastname,
         firstname: data.firstname,
         email: data.email || "",
-        login: data.firstname + data.lastname,
+        login: normalizeName(data.firstname) + normalizeName(data.lastname),
         phone: normalizePhoneNumber(data.phone) || "",  // Différent de phone_mobile pour members
         civility_id: data.civility || "MR",
         societe: data.societe || "",
@@ -151,16 +187,37 @@ const toDolibarrFormat = (data) => {
         note_private: data.note_private || "",
 
         // Options spécifiques, tableau vide par défaut
-        array_options: {},
+        array_options: {
+            options_iddocuware: data.iddocuware || "",
+            options_avantage_membres: data.avantages_membres || "",
+            options_avantages_grand_public: data.avantages_public || "",
+            options_activite: data.activite_representee || ""
+        },
 
         // Autres champs techniques requis avec valeurs par défaut
         ref: "1"
     };
 };
 
+const transformFromDocuware = (data) => {
+    return {
+        firstname: data.PRENOM_CARTE_DE_MEMBRE_1 || '',
+        lastname: data.NOM_CARTE_DE_MEMBRE_1 || '',
+        email: data.EMAIL_CARTE_DE_MEMBRE_1 || '',
+        phone: data.PORTABLE_CARTE_DE_MEMBRE_1 || '',
+        societe: data.NOM_DE_L_ENTREPRISE || '',
+        address: data.ADRESSE_DE_L_ENTREPRISE || '',
+        iddocuware: data.ID_FICHE?.toString() || null,
+        avantages_membres: data.AVANTAGES_MIS_EN_PLACE__RESER || "",
+        avantages_public: data.AVANTAGES_MIS_EN_PLACE__GRAND || "",
+        activite_representee: data.ACTIVITE_REPRESENTEE || ""
+    };
+};
+
 export default {
     validate,
     toDolibarrFormat,
+    transformFromDocuware,
     TYPES_ADHERENT,
     CIVILITES
 }; 
