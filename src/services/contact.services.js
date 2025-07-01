@@ -76,8 +76,14 @@ export const getContactsBySocid = async (socid) => {
 };
 
 export const updateContactFromDocuware = async (contacts, data) => {
+    console.log("contacts", contacts);
+    console.log("data", data);
     const docuwareData = contactModel.transformFromDocuware(data);
+    console.log("docuwareData", docuwareData);
     const updatedContacts = await Promise.all(contacts.map(async (contact, index) => {
+        console.log("contact", contact);
+        console.log("index", index);
+        console.log("docuwareData.members[index]", docuwareData.members[index]);
         return await updateContact(
             contact.id,
             docuwareData.members[index]
