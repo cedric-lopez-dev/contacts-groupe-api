@@ -4,7 +4,11 @@ import { createContactFromDocuware, updateContact } from './contact.services.js'
 import { createThirdpartyFromDocuware } from './thirdparties.service.js';
 
 export const createFromDocuware = async (data) => {
-
+    const idDocuware = data.DWDOCID;
+    console.log(idDocuware);
+    const contacteur = await getContacteurByDocuwareId(idDocuware);
+    console.log(contacteur);
+    return
     const docuwareData = contacteurModel.transformFromDocuware(data);
     const newContacteur = await createContacteur(docuwareData);
     const memberID = newContacteur;
@@ -65,6 +69,24 @@ export const updateContacteur = async (memberID, data) => {
         const errors = Object.entries(error.error)
             .map(([key, value]) => [key, value]);
         throw new Error(errors, 'Erreur lors de la mise à jour du contacteur');
+    }
+    return await response.json();
+}
+
+export const getContacteurByDocuwareId = async (idDocuware) => {
+    const sqlFilter = `ef.iddocuware:like:'${idDocuware}'`;
+    const response = await fetch(
+        `${process.env.DOLIBARR_URL}members?sqlfilters=${sqlFilter}`,
+        {
+            headers: {
+                'Accept': 'application/json',
+                'DOLAPIKEY': process.env.DOLIBARR_API_KEY
+            }
+        }
+    );
+    if (!response.ok) {
+        console.log(response);
+        throw new Error('Erreur lors de la récupération du contacteur');
     }
     return await response.json();
 }

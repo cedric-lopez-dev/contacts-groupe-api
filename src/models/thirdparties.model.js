@@ -65,7 +65,8 @@ const thirdpartiesSchema = Joi.object({
         .max(255)
         .allow('')
         .allow(null),
-    zip: Joi.string()
+    zip: Joi.string(),
+    rcs: Joi.string(),
 });
 
 // Validation function
@@ -105,6 +106,7 @@ const toDolibarrFormat = (data) => {
         email: data.email,
         phone: data.phone,
         address: data.address,
+        idprof1: data.rcs,
     };
 };
 
@@ -115,6 +117,7 @@ const transformFromDocuware = (data) => {
         email: data.EMAIL_CARTE_DE_MEMBRE_1 || '',
         phone: data.PORTABLE_CARTE_DE_MEMBRE_1 || '',
         address: data.ADRESSE_DE_L_ENTREPRISE || '',
+        rcs: data.RCS_DE_L_ENTREPRISE || '',
     };
 };
 

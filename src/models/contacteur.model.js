@@ -182,6 +182,7 @@ const toDolibarrFormat = (data) => {
         type: data.type,
         typeid: getTypeId(data.type),   // Conversion du type en ID
         need_subscription: "1",
+        address: data.address || "",
 
         // Notes
         note_private: data.note_private || "",
