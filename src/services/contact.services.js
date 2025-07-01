@@ -77,11 +77,16 @@ export const getContactsBySocid = async (socid) => {
 
 export const updateContactFromDocuware = async (contacts, data) => {
     const docuwareData = contactModel.transformFromDocuware(data);
-    const updatedContacts = await Promise.all(contacts.map(async (contact, index) => {
-        return await updateContact(
-            contact.id,
-            docuwareData.members[index]
-        );
+    console.log("docuwareData", docuwareData);
+    console.log("contacts", contacts);
+    const updatedContacts = await Promise.all(docuwareData.members.map(async (contact, index) => {
+        if (contacts[index]?.id) {
+            return await updateContact(
+                contacts[index].id,
+                contact
+            );
+        }
+        return await createContact(contact);
     }));
     return updatedContacts;
 };
