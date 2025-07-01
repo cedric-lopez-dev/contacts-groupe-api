@@ -38,7 +38,8 @@ export const createContact = async (data) => {
 };
 
 export const updateContact = async (contactID, data) => {
-
+    const validatedData = await contactModel.validate(data);
+    const dolibarrData = contactModel.toDolibarrFormat(validatedData);
     try {
         const response = await fetch(`${process.env.DOLIBARR_URL}contacts/${contactID}`, {
             method: 'PUT',
@@ -46,7 +47,7 @@ export const updateContact = async (contactID, data) => {
                 'Content-Type': 'application/json',
                 'DOLAPIKEY': process.env.DOLIBARR_API_KEY
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(dolibarrData)
         });
         if (!response.ok) {
             const error = await response.json();
@@ -59,4 +60,28 @@ export const updateContact = async (contactID, data) => {
     } catch (error) {
         throw new Error(`Erreur lors de la sauvegarde : ${error.message}`);
     }
+};
+
+export const getContactsBySocid = async (socid) => {
+    const response = await fetch(`${process.env.DOLIBARR_URL}contacts?thirdparty_ids=${socid}`, {
+        headers: {
+            'Content-Type': 'application/json',
+            'DOLAPIKEY': process.env.DOLIBARR_API_KEY
+        }
+    });
+    if (!response.ok) {
+        throw new Error('Erreur lors de la récupération des contacts');
+    }
+    return await response.json();
+};
+
+export const updateContactFromDocuware = async (contacts, data) => {
+    const docuwareData = contactModel.transformFromDocuware(data);
+    const updatedContacts = await Promise.all(contacts.map(async (contact, index) => {
+        return await updateContact(
+            contact.id,
+            docuwareData.members[index]
+        );
+    }));
+    return updatedContacts;
 };

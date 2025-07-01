@@ -1,18 +1,18 @@
-import { createFromDocuware } from '../src/services/contacteur.services.js';
+import { createFromDocuware, getContacteurByDocuwareId, updateFromDocuware } from '../src/services/contacteur.services.js';
 import dotenv from 'dotenv';
 dotenv.config();
 
 const data = {
     DOCUMENT_TYPE: 'Fiche de renseignements',
     DATE: '2025-06-18T00:00:00',
-    DATE_DE_DEBUT_DE_CONTRAT: '2025-06-18T00:00:00',
-    DATE_DE_FIN_DE_CONTRAT: '2026-06-18T00:00:00',
+    DATE_DE_DEBUT_DE_CONTRAT: '2026-06-18T00:00:00',
+    DATE_DE_FIN_DE_CONTRAT: '2027-06-18T00:00:00',
     SECTEUR_GEOGRAPHIQUE: 'Perpignan',
     NOM_DE_L_ENTREPRISE: 'Dernier Test Promis',
-    DENOMINATION_COMMERCIALE: 'test',
+    DENOMINATION_COMMERCIALE: 'test test',
     SIRET: null,
     NOM_CARTE_DE_MEMBRE_1: 'LOPEZ',
-    PRENOM_CARTE_DE_MEMBRE_1: 'Cédric-test',
+    PRENOM_CARTE_DE_MEMBRE_1: 'Cédric',
     DATE_DE_NAISSANCE_CARTE_DE_ME: '2025-06-11T00:00:00',
     POSTE_OCCUPE_CARTE_DE_MEMBRE_: 'boss',
     EMAIL_CARTE_DE_MEMBRE_1: '66cedric.lopez@gmail.com',
@@ -85,4 +85,10 @@ const data = {
     DWSYS_ORG_GUID: '7eee9134-94d4-442d-b4be-8bed8384872f'
 }
 
-const contacteur = await createFromDocuware(data);
+const contacteur = await getContacteurByDocuwareId(462);
+
+
+
+const updatedContacteur = await updateFromDocuware(data, contacteur[0]);
+
+console.log(updatedContacteur);

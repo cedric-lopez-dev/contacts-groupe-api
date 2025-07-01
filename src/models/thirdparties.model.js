@@ -106,7 +106,7 @@ const toDolibarrFormat = (data) => {
         email: data.email,
         phone: data.phone,
         address: data.address,
-        idprof1: data.rcs,
+        idprof2: data.rcs,
     };
 };
 
