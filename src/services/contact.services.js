@@ -13,6 +13,7 @@ export const createContactFromDocuware = async (data) => {
 
 
 export const createContact = async (data) => {
+    console.log("data", data);
     const validatedData = await contactModel.validate(data);
     const dolibarrData = contactModel.toDolibarrFormat(validatedData);
     try {
@@ -77,10 +78,9 @@ export const getContactsBySocid = async (socid) => {
 
 export const updateContactFromDocuware = async (contacts, data) => {
     const docuwareData = contactModel.transformFromDocuware(data);
-    console.log("docuwareData", docuwareData);
-    console.log("contacts", contacts);
     const updatedContacts = await Promise.all(docuwareData.members.map(async (contact, index) => {
         if (contacts[index]?.id) {
+            console.log("contacts[index]", contacts[index]);
             return await updateContact(
                 contacts[index].id,
                 contact
