@@ -1,4 +1,4 @@
-import { createFromDocuware } from '../services/contacteur.services.js';
+import { createFromDocuware, getContacteurByDocuwareId } from '../services/contacteur.services.js';
 
 
 export const contacteurFromDocuware = async (req, res) => {
