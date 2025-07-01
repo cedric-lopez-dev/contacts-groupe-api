@@ -1,14 +1,11 @@
 import contacteurModel from '../models/contacteur.model.js';
 import { createContactFromDocuware, updateContact } from './contact.services.js';
+import { createSubscriptionFromDocuware } from './subscription.services.js';
 
 import { createThirdpartyFromDocuware } from './thirdparties.service.js';
 
 export const createFromDocuware = async (data) => {
-    const idDocuware = data.DWDOCID;
-    console.log(idDocuware);
-    const contacteur = await getContacteurByDocuwareId(idDocuware);
-    console.log(contacteur);
-    return
+
     const docuwareData = contacteurModel.transformFromDocuware(data);
     const newContacteur = await createContacteur(docuwareData);
     const memberID = newContacteur;
@@ -26,9 +23,22 @@ export const createFromDocuware = async (data) => {
             { socid: thirdpartyID }
         );
     }));
+    const newSubscription = await createSubscriptionFromDocuware(data, memberID);
 
     return { updatedContacteur, updatedContact };
 };
+
+export const updateFromDocuware = async (data, contacteur) => {
+    const docuwareData = contacteurModel.transformFromDocuware(data);
+    const updatedContacteur = await updateContacteur(
+        docuwareData.id,
+        docuwareData
+    );
+    const updatedContact = await updateContact(
+        docuwareData.id,
+        docuwareData
+    );
+}
 
 
 export const createContacteur = async (data) => {

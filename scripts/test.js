@@ -6,7 +6,7 @@ const data = {
     DOCUMENT_TYPE: 'Fiche de renseignements',
     DATE: '2025-06-18T00:00:00',
     DATE_DE_DEBUT_DE_CONTRAT: '2025-06-18T00:00:00',
-    DATE_DE_FIN_DE_CONTRAT: '2025-06-18T00:00:00',
+    DATE_DE_FIN_DE_CONTRAT: '2026-06-18T00:00:00',
     SECTEUR_GEOGRAPHIQUE: 'Perpignan',
     NOM_DE_L_ENTREPRISE: 'Dernier Test Promis',
     DENOMINATION_COMMERCIALE: 'test',

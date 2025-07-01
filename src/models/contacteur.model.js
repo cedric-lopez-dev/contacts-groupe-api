@@ -101,6 +101,12 @@ const contacteurSchema = Joi.object({
         .allow(null)
         .messages({
             'string.base': `${baseMessages} Activité représentée doit être une chaîne de caractères`
+        }),
+    date_fin_contrat: Joi.date()
+        .allow('')
+        .allow(null)
+        .messages({
+            'date.base': `${baseMessages} Date de fin de contrat doit être une date`
         })
 });
 
@@ -159,6 +165,7 @@ const normalizeName = (name) => {
 };
 
 const toDolibarrFormat = (data) => {
+    const offsetMs = 2 * 60 * 60 * 1000;
     return {
         // Valeurs par défaut requises
         entity: "1",
@@ -183,6 +190,7 @@ const toDolibarrFormat = (data) => {
         typeid: getTypeId(data.type),   // Conversion du type en ID
         need_subscription: "1",
         address: data.address || "",
+        datefin: data.date_fin_contrat ? Math.floor((new Date(data.date_fin_contrat).getTime() + offsetMs) / 1000) : null,
 
         // Notes
         note_private: data.note_private || "",
@@ -211,7 +219,8 @@ const transformFromDocuware = (data) => {
         iddocuware: data.ID_FICHE?.toString() || null,
         avantages_membres: data.AVANTAGES_MIS_EN_PLACE__RESER || "",
         avantages_public: data.AVANTAGES_MIS_EN_PLACE__GRAND || "",
-        activite_representee: data.ACTIVITE_REPRESENTEE || ""
+        activite_representee: data.ACTIVITE_REPRESENTEE || "",
+        date_fin_contrat: data.DATE_DE_FIN_DE_CONTRAT || ""
     };
 };
 

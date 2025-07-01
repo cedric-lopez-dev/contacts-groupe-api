@@ -1,4 +1,4 @@
-import { createFromDocuware, getContacteurByDocuwareId } from '../services/contacteur.services.js';
+import { createFromDocuware, getContacteurByDocuwareId, updateFromDocuware } from '../services/contacteur.services.js';
 
 
 export const contacteurFromDocuware = async (req, res) => {
@@ -6,12 +6,12 @@ export const contacteurFromDocuware = async (req, res) => {
     const idDocuware = req.body.DWDOCID;
     const contacteur = await getContacteurByDocuwareId(idDocuware);
     if (contacteur.length > 0) {
+        const updatedContacteur = await updateFromDocuware(req.body, contacteur[0]);
         res.status(200).json({
             status: 'success',
-            message: 'Contacteur récupéré avec succès',
-            data: contacteur
+            message: 'Contacteur mis à jour avec succès',
+            data: updatedContacteur
         });
-        console.log(contacteur);
         return
     }
 
