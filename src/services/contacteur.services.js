@@ -39,10 +39,9 @@ export const updateFromDocuware = async (data, contacteur) => {
         updatedContacteur.fk_soc,
         data
     );
-    console.log(updatedContacteur.fk_soc);
 
     const thirdpartyWithContacts = await getContactsBySocid(updatedContacteur.fk_soc);
-    const updatedContacts = await updateContactFromDocuware(thirdpartyWithContacts, data);
+    const updatedContacts = await updateContactFromDocuware(thirdpartyWithContacts, data, updatedContacteur.fk_soc);
 
 
     const subscriptions = await getSubscriptionsByMemberId(updatedContacteur.id);
