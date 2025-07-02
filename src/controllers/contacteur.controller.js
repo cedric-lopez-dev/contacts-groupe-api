@@ -52,8 +52,7 @@ const fromAdhesion = async (req, res) => {
 }
 
 const fromContrat = async (req, res) => {
-    console.log("req.body", req.body);
-    const idDocuware = req.body.ID_Fiche;
-    console.log("idDocuware", idDocuware);
+    const idDocuware = req.body.ID_FICHE;
     const contacteur = await getContacteurByDocuwareId(idDocuware);
+    console.log("contacteur", contacteur);
 }
