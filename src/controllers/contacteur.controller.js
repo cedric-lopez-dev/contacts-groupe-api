@@ -2,7 +2,7 @@ import { createFromDocuware, getContacteurByDocuwareId, updateFromDocuware } fro
 
 
 export const contacteurFromDocuware = async (req, res) => {
-    console.log("req.body", req.body.statut);
+    console.log("req.body", req.body);
     if (req.body.statut === "Fiche Validée") {
         return fromAdhesion(req, res);
     }
