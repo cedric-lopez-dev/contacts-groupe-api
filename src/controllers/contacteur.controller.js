@@ -5,7 +5,13 @@ export const contacteurFromDocuware = async (req, res) => {
     if (req.body.statut === "Fiche Validée") {
         return fromAdhesion(req, res);
     }
-    return fromContrat(req, res);
+    if (req.body.statut === "Contrat signé") {
+        return fromContrat(req, res);
+    }
+    return res.status(400).json({
+        status: 'error',
+        message: 'Statut invalide'
+    });
 };
 
 const fromAdhesion = async (req, res) => {
@@ -46,6 +52,7 @@ const fromAdhesion = async (req, res) => {
 }
 
 const fromContrat = async (req, res) => {
+    console.log("req.body", req.body);
     const idDocuware = req.body.ID_Fiche;
     const contacteur = await getContacteurByDocuwareId(idDocuware);
     console.log("contacteur", contacteur);
