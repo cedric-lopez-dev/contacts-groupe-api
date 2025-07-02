@@ -23,9 +23,9 @@ export const createFromDocuware = async (data) => {
     //         { socid: thirdpartyID }
     //     );
     // }));
-    const newSubscription = await createSubscriptionFromDocuware(data, memberID);
+    // const newSubscription = await createSubscriptionFromDocuware(data, memberID);
 
-    return { updatedContacteur };
+    return { updatedContacteur, newContacts };
 };
 
 export const updateFromDocuware = async (data, contacteur) => {
@@ -44,9 +44,9 @@ export const updateFromDocuware = async (data, contacteur) => {
     const updatedContacts = await updateContactFromDocuware(thirdpartyWithContacts, data, updatedContacteur.fk_soc);
 
 
-    const subscriptions = await getSubscriptionsByMemberId(updatedContacteur.id);
+    // const subscriptions = await getSubscriptionsByMemberId(updatedContacteur.id);
 
-    const updatedSubscription = await updateSubscriptionFromDocuware(subscriptions[0].id, data, updatedContacteur.id);
+    // const updatedSubscription = await updateSubscriptionFromDocuware(subscriptions[0].id, data, updatedContacteur.id);
 
     return {};
 }

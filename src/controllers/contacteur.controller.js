@@ -2,7 +2,13 @@ import { createFromDocuware, getContacteurByDocuwareId, updateFromDocuware } fro
 
 
 export const contacteurFromDocuware = async (req, res) => {
+    if (req.body.statut === "Fiche Validée") {
+        return fromAdhesion(req, res);
+    }
+    return fromContrat(req, res);
+};
 
+const fromAdhesion = async (req, res) => {
     const idDocuware = req.body.DWDOCID;
     const contacteur = await getContacteurByDocuwareId(idDocuware);
     if (contacteur.length > 0) {
@@ -37,4 +43,11 @@ export const contacteurFromDocuware = async (req, res) => {
             error: error.message
         });
     }
-};
+}
+
+const fromContrat = async (req, res) => {
+    const idDocuware = req.body.ID_Fiche;
+    const contacteur = await getContacteurByDocuwareId(idDocuware);
+    console.log("contacteur", contacteur);
+
+}
