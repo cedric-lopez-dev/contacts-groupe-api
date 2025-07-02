@@ -2,6 +2,7 @@ import { createFromDocuware, getContacteurByDocuwareId, updateFromDocuware } fro
 
 
 export const contacteurFromDocuware = async (req, res) => {
+    console.log("req.body", req.body.statut);
     if (req.body.statut === "Fiche Validée") {
         return fromAdhesion(req, res);
     }
@@ -52,8 +53,9 @@ const fromAdhesion = async (req, res) => {
 }
 
 const fromContrat = async (req, res) => {
+    console.log("idFiche", req.body.ID_Fiche);
     const idDocuware = req.body.ID_Fiche;
     const contacteur = await getContacteurByDocuwareId(idDocuware);
-    console.log("contacteur", contacteur);
+
 
 }
