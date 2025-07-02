@@ -15,17 +15,17 @@ export const createFromDocuware = async (data) => {
         memberID,
         { socid: thirdpartyID }
     );
-    const newContacts = await createContactFromDocuware(data);
+    const newContacts = await createContactFromDocuware(data, thirdpartyID);
 
-    const updatedContact = await Promise.all(newContacts.map(async contact => {
-        return await updateContact(
-            contact,
-            { socid: thirdpartyID }
-        );
-    }));
+    // const updatedContact = await Promise.all(newContacts.map(async contact => {
+    //     return await updateContact(
+    //         contact,
+    //         { socid: thirdpartyID }
+    //     );
+    // }));
     const newSubscription = await createSubscriptionFromDocuware(data, memberID);
 
-    return { updatedContacteur, updatedContact };
+    return { updatedContacteur };
 };
 
 export const updateFromDocuware = async (data, contacteur) => {
@@ -39,9 +39,7 @@ export const updateFromDocuware = async (data, contacteur) => {
         updatedContacteur.fk_soc,
         data
     );
-    console.log("updatedContacteur", updatedContacteur);
     const thirdpartyWithContacts = await getContactsBySocid(updatedContacteur.fk_soc);
-    console.log("thirdpartyWithContacts", thirdpartyWithContacts);
     const updatedContacts = await updateContactFromDocuware(thirdpartyWithContacts, data);
 
 

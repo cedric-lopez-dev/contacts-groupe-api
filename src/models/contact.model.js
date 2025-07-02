@@ -41,6 +41,11 @@ const contactSchema = Joi.object({
         .max(255)
         .messages({
             'string.max': `${baseMessages} adresse ne peut pas dépasser {#limit} caractères`
+        }),
+    socid: Joi.string()
+        .max(255)
+        .messages({
+            'string.max': `${baseMessages} socid ne peut pas dépasser {#limit} caractères`
         })
 });
 
@@ -111,6 +116,7 @@ const toDolibarrFormat = (member) => {
         poste: member.poste,
         dateNaissance: member.dateNaissance,
         address: member.address,
+        socid: member.socid
     };
 };
 

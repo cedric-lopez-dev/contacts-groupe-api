@@ -1,10 +1,11 @@
 import contactModel from "../models/contact.model.js";
 
-export const createContactFromDocuware = async (data) => {
+export const createContactFromDocuware = async (data, thirdpartyID) => {
 
     const docuwareData = contactModel.transformFromDocuware(data);
     const contacts = await Promise.all(docuwareData.members.map(async member => {
         member.address = data.ADRESSE_DE_L_ENTREPRISE;
+        member.socid = thirdpartyID;
         const newContact = await createContact(member);
         return newContact;
     }));
@@ -13,7 +14,6 @@ export const createContactFromDocuware = async (data) => {
 
 
 export const createContact = async (data) => {
-    console.log("data", data);
     const validatedData = await contactModel.validate(data);
     const dolibarrData = contactModel.toDolibarrFormat(validatedData);
     try {
