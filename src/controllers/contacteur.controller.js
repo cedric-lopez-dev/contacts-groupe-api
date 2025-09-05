@@ -29,7 +29,9 @@ const fromAdhesion = async (req, res) => {
 
 
     try {
+        console.log("no exist")
         const contacteur = await createFromDocuware(req.body);
+        console.log("body",req.body)
         res.status(201).json({
             status: 'success',
             message: 'Contacteur créé avec succès',
