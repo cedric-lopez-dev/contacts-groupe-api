@@ -8,9 +8,9 @@ export const contacteurFromDocuware = async (req, res) => {
     if (req.body.STATUT === "Contrat signé") {
         return fromContrat(req, res);
     }
-    return res.status(400).json({
-        status: 'error',
-        message: 'Statut invalide'
+    return res.status(200).json({
+        status: 'ok',
+        message: 'Statut non traité'
     });
 };
 
