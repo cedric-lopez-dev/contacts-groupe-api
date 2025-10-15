@@ -54,7 +54,6 @@ export const updateFromDocuware = async (data, contacteur) => {
 export const createContacteur = async (data) => {
     const validatedData = await contacteurModel.validate(data);
     const dolibarrData = contacteurModel.toDolibarrFormat(validatedData);
-    console.log("dolibarrData", dolibarrData)
     try {
         const response = await fetch(`${process.env.DOLIBARR_URL}members`, {
             method: 'POST',
