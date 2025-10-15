@@ -16,9 +16,7 @@ export const contacteurFromDocuware = async (req, res) => {
 
 const fromAdhesion = async (req, res) => {
     const idDocuware = req.body.DWDOCID;
-    console.log("idDocuware", idDocuware)
     const contacteur = await getContacteurByDocuwareId(idDocuware);
-    console.log("exist", contacteur)
     if (contacteur.length > 0) {
         const updatedContacteur = await updateFromDocuware(req.body, contacteur[0]);
         res.status(200).json({
@@ -31,9 +29,7 @@ const fromAdhesion = async (req, res) => {
 
 
     try {
-        console.log("no exist")
         const contacteur = await createFromDocuware(req.body);
-        console.log("body", req.body)
         res.status(201).json({
             status: 'success',
             message: 'Contacteur créé avec succès',

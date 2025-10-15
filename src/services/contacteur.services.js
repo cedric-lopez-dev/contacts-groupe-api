@@ -5,7 +5,7 @@ import { createSubscriptionFromDocuware, getSubscriptionsByMemberId, updateSubsc
 import { createThirdpartyFromDocuware, updateThirdparty } from './thirdparties.service.js';
 
 export const createFromDocuware = async (data) => {
-
+    console.log("data", data)
     const docuwareData = contacteurModel.transformFromDocuware(data);
     const newContacteur = await createContacteur(docuwareData);
     const memberID = newContacteur;
