@@ -5,15 +5,21 @@ import { createSubscriptionFromDocuware, getSubscriptionsByMemberId, updateSubsc
 import { createThirdpartyFromDocuware, updateThirdparty } from './thirdparties.service.js';
 
 export const createFromDocuware = async (data) => {
+    console.log("envoi createFromDocuware")
     const docuwareData = contacteurModel.transformFromDocuware(data);
+    console.log("envoi createContacteur")
     const newContacteur = await createContacteur(docuwareData);
     const memberID = newContacteur;
+    console.log("envoi createThirdpartyFromDocuware")
     const newThirdparty = await createThirdpartyFromDocuware(data);
+    console.log("envoi thirdpartyID")
     const thirdpartyID = newThirdparty;
+    console.log("envoi updateContacteur")
     const updatedContacteur = await updateContacteur(
         memberID,
         { socid: thirdpartyID }
     );
+    console.log("envoi createContactFromDocuware")
     const newContacts = await createContactFromDocuware(data, thirdpartyID);
 
     // const updatedContact = await Promise.all(newContacts.map(async contact => {
