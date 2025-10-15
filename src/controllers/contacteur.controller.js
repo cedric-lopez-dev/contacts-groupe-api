@@ -29,6 +29,7 @@ const fromAdhesion = async (req, res) => {
 
 
     try {
+        console.log("req doli")
         const contacteur = await createFromDocuware(req.body);
         console.log("contacteur", contacteur)
         res.status(201).json({
