@@ -2,7 +2,6 @@ import { createFromDocuware, getContacteurByDocuwareId, updateFromDocuware } fro
 
 
 export const contacteurFromDocuware = async (req, res) => {
-    console.log("req.body", req.body)
     if (req.body.STATUT === "Fiche Validée") {
         return fromAdhesion(req, res);
     }
@@ -17,6 +16,7 @@ export const contacteurFromDocuware = async (req, res) => {
 
 const fromAdhesion = async (req, res) => {
     const idDocuware = req.body.DWDOCID;
+    console.log("idDocuware", idDocuware)
     const contacteur = await getContacteurByDocuwareId(idDocuware);
     console.log("exist", contacteur)
     if (contacteur.length > 0) {
