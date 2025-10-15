@@ -71,6 +71,8 @@ export const createContacteur = async (data) => {
             },
             body: JSON.stringify(dolibarrData)
         });
+        console.log("envoi response")
+        console.log(response)
         if (!response.ok) {
             const error = await response.json();
             const errors = Object.entries(error.error)
