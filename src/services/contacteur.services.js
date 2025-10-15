@@ -23,7 +23,7 @@ export const createFromDocuware = async (data) => {
     //     );
     // }));
     // const newSubscription = await createSubscriptionFromDocuware(data, memberID);
-
+    console.log("newContacts", newContacts)
     return { updatedContacteur, newContacts };
 };
 
