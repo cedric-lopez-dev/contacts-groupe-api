@@ -5,7 +5,6 @@ import { createSubscriptionFromDocuware, getSubscriptionsByMemberId, updateSubsc
 import { createThirdpartyFromDocuware, updateThirdparty } from './thirdparties.service.js';
 
 export const createFromDocuware = async (data) => {
-    console.log("data", data)
     const docuwareData = contacteurModel.transformFromDocuware(data);
     const newContacteur = await createContacteur(docuwareData);
     const memberID = newContacteur;
@@ -55,6 +54,7 @@ export const updateFromDocuware = async (data, contacteur) => {
 export const createContacteur = async (data) => {
     const validatedData = await contacteurModel.validate(data);
     const dolibarrData = contacteurModel.toDolibarrFormat(validatedData);
+    console.log("dolibarrData", dolibarrData)
     try {
         const response = await fetch(`${process.env.DOLIBARR_URL}members`, {
             method: 'POST',
